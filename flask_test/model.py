@@ -39,8 +39,8 @@ genre_sparse = sparse.csr_matrix(genre_array)
 print("Binarized Output")
 
 print("Beginning TF-IDF Vectorization")
-tfidf_vectorizer = TfidfVectorizer()
-text_sparse = tfidf_vectorizer.fit_transform(preproc_df['lyrics_clean'])
+tfidf_vectorizer = TfidfVectorizer().fit(preproc_df['lyrics_clean'])
+text_sparse = tfidf_vectorizer.transform(preproc_df['lyrics_clean'])
 print("TF-IDF Vectorization Complete")
 
 print("Partitioning Data for Model Training")
