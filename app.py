@@ -12,11 +12,11 @@ model = pickle.load(open("templates/model.pkl", "rb"))
 # Load vectorizer
 vectorizer = pickle.load(open('templates/vectorizer.pkl','rb'))
 
-@app.route("/")
+@app.route("/", methods = ["POST", "GET"])
 def home():
     return render_template("index.html")
 
-@app.route("/index.html")
+@app.route("/index.html", methods = ["POST", "GET"])
 def go_home():
     return render_template("index.html")
 
@@ -46,7 +46,8 @@ def predict(model = model,
     print(pred)
 
     # Show results on HTML
-    return render_template("prediciton.html", prediction_string="Predictions: ", )
+    return render_template("prediction.html", prediction_string="Predictions: ", 
+                           results= pred)
 
 if __name__ == "__main__":
     app.run()

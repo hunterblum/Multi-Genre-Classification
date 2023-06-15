@@ -3,8 +3,8 @@
 <title>Genre Prediction</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css.4.w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?famile=Raleway">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="static/pred_style.css">
 
@@ -15,21 +15,21 @@
 
 <!-- Header -->
 <header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">
-    <h1 class="w3-xlarge">Lyric Genre Prediction</h1>
-    <h1>Linear SVC Model Results</h1>
+      <h1 class="w3-xlarge">Lyric Genre Prediction</h1>
+      <h1>Machine Learing WebApp</h1>
 
 </header>
 
 <!-- Form Input -->
 <div class="w3-center">
-        <form action="{{url_for('predict')}}" method="post">
+        <form action="{{ url_for('predict')}}" method="post">
         <label for="lyrics">Lyrics:</label>
         <input type="text" name="lyrics" id="lyrics">
         <input type="submit" value="Submit">
     </form>
 
-    <h2><br>{{prediciton_string}}<br></h2>
-    <br>{{categories}}<br>
+    <h2><br>{{prediction_string}}<br></h2>
+    <br>{{category}}<br>
     {{topic}}
 
 </div>
@@ -41,7 +41,7 @@
 <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-large">
 
     <p><a href="index.html" class="h3=hover=text=green">Go Back to Index Page</a></p>
-    <p>Built by <a href="https://github.com/hunterblum/TextMining_Team12" target="_blank" class="w3-hover-text-green">HunterBlum,KyleDalope,NicholasLee</a></p>
+    <p>GitHub Page <a href="https://github.com/hunterblum/TextMining_Team12" target="_blank" class="w3-hover-text-green">HunterBlum, KyleDalope, & NicholasLee</a></p>
 
 </footer>
 
