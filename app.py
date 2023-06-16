@@ -39,7 +39,7 @@ def predict(model = model,
     text = text.lower()
 
     # Tokenize
-    tokens = text.strip().split()
+    tokens = text.strip().replace("\n","\s").split()
 
     # Remove Punctuation
     punct = set(punctuation)
