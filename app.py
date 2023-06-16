@@ -76,7 +76,7 @@ def predict(model = model,
     for i in range(0, 5):
         genre = genres[i]
         genre_i_prob = str(round(prob[i][:,1][0] * 100, 2))
-        genre_prob_str = genre_i_prob + "%" + " " + genre + "\n"
+        genre_prob_str = genre_i_prob + "%" + " " + genre + "<br>"
         result_string += genre_prob_str
 
     # Show results on HTML

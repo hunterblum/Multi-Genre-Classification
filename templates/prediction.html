@@ -29,7 +29,10 @@
     </form>
 
     <h2><br>{{prediction_string}}<br></h2>
-    <br>{{results}}<br>
+    {% autoescape false %}
+        <br>{{results}}<br>
+    {% endautoescape %}
+    
     {{topic}}
 
 </div>
