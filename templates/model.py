@@ -50,6 +50,6 @@ y_pred = svc_clf.predict(X_test)
 
 # Save model
 print("Pickling Model")
-pickle.dump(svc_clf, open('templates/model.pkl', 'wb'))
+pickle.dump(svc_clf, open('model.pkl', 'wb'))
 print("Picking Vectorizer")
-pickle.dump(tfidf_vectorizer, open("templates/vectorizer.pkl", "wb"))
+pickle.dump(tfidf_vectorizer, open("vectorizer.pkl", "wb"))
