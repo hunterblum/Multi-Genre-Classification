@@ -53,7 +53,7 @@ def predict(model = model,
     # Removing words that were common in our word clouds
     stop_add = ['like', 'yeah', 'oh', 'i\'m', 'i\'ve', 'i\'ll', 'can\'t', 'cause']
     sw.update(stop_add)
-    tokens = [token for token in text if token not in sw]
+    tokens = [t for t in tokens if t not in sw]
 
     # Remove more punctuations
     tokens = ["".join(ch for ch in word if ch not in punct_prof) for word in tokens]
