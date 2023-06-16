@@ -9,16 +9,6 @@ from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 
-'''
-The files model.py, request.py, and server.py were obtained from:
-https://towardsdatascience.com/deploy-a-machine-learning-model-using-flask-da580f84e60c
-
-To run the files:
-1. Open a terminal and execute model.py
-2. Open a new terminal and execute server.py
-3. In the first terminal execute request.py
-'''
-
 
 #import data
 # Read in preprocessed data
@@ -51,7 +41,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 print("Training Model")
 svc_clf = MultiOutputClassifier(
     SVC(
-        kernel = "linear", probability = True, random_state = 2023)
+        C = 100, kernel = "linear", 
+        probability = True, random_state = 2023)
     ).fit(X_train, y_train)
 
 print("Predicting Test Set")
@@ -59,6 +50,6 @@ y_pred = svc_clf.predict(X_test)
 
 # Save model
 print("Pickling Model")
-pickle.dump(svc_clf, open('flask_test/model.pkl', 'wb'))
+pickle.dump(svc_clf, open('templates/model.pkl', 'wb'))
 print("Picking Vectorizer")
-pickle.dump(tfidf_vectorizer, open("flask_test/vectorizer.pkl", "wb"))
+pickle.dump(tfidf_vectorizer, open("templates/vectorizer.pkl", "wb"))
