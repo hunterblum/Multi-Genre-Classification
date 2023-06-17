@@ -6,6 +6,8 @@ from string import punctuation
 from nltk.corpus import stopwords
 import re
 from better_profanity import profanity
+import eli5
+
 
 import pickle
 
@@ -95,9 +97,15 @@ def predict(model = model,
         genre_prob_str = genre_i_prob + "%" + " " + genre + "<br>"
         result_string += genre_prob_str
 
+    # ELI5 Graphic
+    feats_array = vectorizer.get_feature_names_out()
+    feats_list = feats_array.tolist()
+    pred = eli5.explain_prediction(model.estimators_[0], preproc_lyrics, vec = vectorizer, top = 10, feature_names = feats_list)
+    pred_eli5 = eli5.format_as_html(pred)
+
     # Show results on HTML
     return render_template("prediction.html", prediction_string="Predictions: ", 
-                           results= result_string)
+                           results= result_string, eli5_res = pred_eli5)
 
 if __name__ == "__main__":
     app.run()
