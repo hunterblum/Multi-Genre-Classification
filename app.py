@@ -55,7 +55,7 @@ def predict(model = model,
     text = profanity.censor(text)
 
     # Tokenize
-    tokens = text.strip().replace("\n","\s").split()
+    tokens = text.strip().replace("\n", " ").split()
 
     # Remove Punctuation
     punct = set(punctuation)
@@ -97,7 +97,7 @@ def predict(model = model,
 
     # Show results on HTML
     return render_template("prediction.html", prediction_string="Predictions: ", 
-                           results= result_string, lyrics = preproc_lyrics)
+                           results= result_string)
 
 if __name__ == "__main__":
     app.run()
