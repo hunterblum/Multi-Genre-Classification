@@ -6,6 +6,7 @@ from string import punctuation
 from nltk.corpus import stopwords
 import re
 from better_profanity import profanity
+import eli5
 
 import pickle
 
@@ -88,13 +89,20 @@ def predict(model = model,
 
     prob = model.predict_proba(lyric_vec)
     genres = ["Country", "Pop", "R&B", "Rap", "Rock"]
+    class_names = [["Not Country", "Country"], 
+               ["Not Pop", "Pop"], 
+               ["Not R&B", "R&B"], 
+               ["Not Rap", "Rap"], 
+               ["Not Rock", "Rock"]]
     result_string = ""
+    model_explanations = []
     for i in range(0, 5):
         genre = genres[i]
         genre_i_prob = str(round(prob[i][:,1][0] * 100, 2))
         genre_prob_str = genre_i_prob + "%" + " " + genre + "<br>"
         result_string += genre_prob_str
 
+        
     # Show results on HTML
     return render_template("prediction.html", prediction_string="Predictions: ", 
                            results= result_string)

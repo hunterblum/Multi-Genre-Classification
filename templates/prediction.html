@@ -16,7 +16,7 @@
 <!-- Header -->
 <header class="w3-panel w3-center w3-opacity" style="padding:20px 16px">
       <h1 class="w3-xlarge">Lyric Genre Prediction</h1>
-      <h1>Machine Learing WebApp</h1>
+      <h1>Machine Learning WebApp</h1>
 
 </header>
 
@@ -26,17 +26,15 @@
         <header class="w3-panel w3-center w3-opacity" style="padding:10px 5px">
             <h1 class="w3-xlarge">Input Lyrics Below:</h1>
         </header>
-        <textarea rows="20", cols = "60", name = "lyrics">{{request.form['lyrics']}}</textarea>
+        <textarea rows="10", cols = "60", name = "lyrics">{{request.form['lyrics']}}</textarea>
         <br>
         <input type="submit" value="Submit">
     </form>
     
-    <h2><br>{{prediction_string}}<br></h2>
+    <h2 class="w3-large"><br>{{prediction_string}}<br></h2>
     {% autoescape false %}
         <br>{{results}}<br>
     {% endautoescape %}
-    
-    {{topic}}
 
 </div>
 
