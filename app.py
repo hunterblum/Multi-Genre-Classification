@@ -13,6 +13,7 @@ import pickle
 app = Flask(__name__)
 # Load model
 model = pickle.load(open('templates/model.pkl', 'rb'))
+
 # Load vectorizer
 vectorizer = pickle.load(open('templates/vectorizer.pkl','rb'))
 
@@ -96,7 +97,7 @@ def predict(model = model,
 
     # Show results on HTML
     return render_template("prediction.html", prediction_string="Predictions: ", 
-                           results= result_string, lyrics = prob)
+                           results= result_string, lyrics = preproc_lyrics)
 
 if __name__ == "__main__":
     app.run()
