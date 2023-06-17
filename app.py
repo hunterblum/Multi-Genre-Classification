@@ -4,13 +4,16 @@ import pandas as pd
 import numpy as np
 from string import punctuation
 from nltk.corpus import stopwords
+import re
+from better_profanity import profanity
 
 import pickle
 
 
 app = Flask(__name__)
 # Load model
-model = pickle.load(open("templates/model.pkl", "rb"))
+model = pickle.load(open('templates/model.pkl', 'rb'))
+
 # Load vectorizer
 vectorizer = pickle.load(open('templates/vectorizer.pkl','rb'))
 
@@ -35,8 +38,21 @@ def predict(model = model,
 
     # String text
     text = str(text)
+
+    # Remove any possible ads in middle of genius lyrics
+    text = re.sub(r"(See[\w\s\W]+?\$[\d,]+You might also like)", "", text)
+
+    # Remove any junk at end of genius lyrics
+    text = re.sub(r"([\d]+Embed)","", text)
+
     # Lowercase text
     text = text.lower()
+
+    # Remove stuff in brackets
+    text = re.sub("[\(\[].*?[\)\]]", "", text)
+
+    # Remove profanity
+    text = profanity.censor(text)
 
     # Tokenize
     tokens = text.strip().replace("\n","\s").split()
@@ -81,7 +97,7 @@ def predict(model = model,
 
     # Show results on HTML
     return render_template("prediction.html", prediction_string="Predictions: ", 
-                           results= result_string)
+                           results= result_string, lyrics = preproc_lyrics)
 
 if __name__ == "__main__":
     app.run()
