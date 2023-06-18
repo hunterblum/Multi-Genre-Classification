@@ -8,6 +8,7 @@ import re
 from better_profanity import profanity
 import eli5
 
+
 import pickle
 
 
@@ -89,23 +90,38 @@ def predict(model = model,
 
     prob = model.predict_proba(lyric_vec)
     genres = ["Country", "Pop", "R&B", "Rap", "Rock"]
-    class_names = [["Not Country", "Country"], 
-               ["Not Pop", "Pop"], 
-               ["Not R&B", "R&B"], 
-               ["Not Rap", "Rap"], 
-               ["Not Rock", "Rock"]]
+   
+    genre_prob = []
     result_string = ""
-    model_explanations = []
     for i in range(0, 5):
         genre = genres[i]
+        genre_prob.append(round(prob[i][:,1][0] * 100, 2))
         genre_i_prob = str(round(prob[i][:,1][0] * 100, 2))
         genre_prob_str = genre_i_prob + "%" + " " + genre + "<br>"
         result_string += genre_prob_str
 
+    # ELI5 Graphic
+    max_genre_prob_index = genre_prob.index(max(genre_prob))
+
+    feats_array = vectorizer.get_feature_names_out()
+    feats_list = feats_array.tolist()
+
+    eli5_output = eli5.format_as_html(
+        eli5.explain_prediction(
+            model.estimators_[max_genre_prob_index],
+            preproc_lyrics,
+            vec = vectorizer,
+            top = 10,
+            feature_names = feats_list
+        )
+    )
         
+
     # Show results on HTML
     return render_template("prediction.html", prediction_string="Predictions: ", 
-                           results= result_string)
+                           results= result_string,
+                           genre_str = genres[max_genre_prob_index],
+                           eli5_result = eli5_output)
 
 if __name__ == "__main__":
     app.run()

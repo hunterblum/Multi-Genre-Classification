@@ -16,7 +16,7 @@
 <!-- Header -->
 <header class="w3-panel w3-center w3-opacity" style="padding:20px 16px">
       <h1 class="w3-xlarge">Lyric Genre Prediction</h1>
-      <h1>Machine Learning WebApp</h1>
+      <h1>Machine Learing WebApp</h1>
 
 </header>
 
@@ -31,10 +31,12 @@
         <input type="submit" value="Submit">
     </form>
     
-    <h2 class="w3-large"><br>{{prediction_string}}<br></h2>
-    {% autoescape false %}
-        <br>{{results}}<br>
-    {% endautoescape %}
+    <h2><br>{{prediction_string}}<br></h2>
+        {% autoescape false %}
+            <br>{{results}}<br>
+            <h3>Model Explanation for the Most Likely Genre: <b>{{genre_str}}</b></h3>
+            {{eli5_result}}
+        {% endautoescape %}
 
 </div>
 
