@@ -115,6 +115,8 @@ def predict(model = model,
             feature_names = feats_list
         )
     )
+
+    eli5_output = "".join(eli5_output.strip().splitlines()[-3:])
         
 
     # Show results on HTML
