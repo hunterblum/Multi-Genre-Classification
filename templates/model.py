@@ -41,7 +41,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 print("Training Model")
 svc_clf = MultiOutputClassifier(
     SVC(
-        C = 100, kernel = "linear", 
+        C = 10, kernel = "linear", gamma = 1,
         probability = True, random_state = 2023)
     ).fit(X_train, y_train)
 

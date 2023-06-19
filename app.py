@@ -111,7 +111,6 @@ def predict(model = model,
             model.estimators_[max_genre_prob_index],
             preproc_lyrics,
             vec = vectorizer,
-            top = 10,
             feature_names = feats_list
         )
     )
@@ -122,6 +121,7 @@ def predict(model = model,
     # Show results on HTML
     return render_template("prediction.html", prediction_string="Predictions: ", 
                            results= result_string,
+                           model_x_string="Model Explanation for the Most Likely Genre: ",
                            genre_str = genres[max_genre_prob_index],
                            eli5_result = eli5_output)
 
