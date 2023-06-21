@@ -1,7 +1,7 @@
 # Lyrics Genre Classification
 _For University of San Diego ADS-509 Spring 2023_
 
-Created by Hunter Blum, Kyle Estaban Dalope, & Nicholas Lee
+Created by Hunter Blum, Kyle Esteban Dalope, & Nicholas Lee
 
 The model takes in a sample of approximately 1,000 well-known songs per genre, analyzes the lyrics, and predicts the probability of each genre for a given set of lyrics.
 
