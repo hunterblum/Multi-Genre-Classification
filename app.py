@@ -1,5 +1,8 @@
 from flask import Flask, request, jsonify, render_template
 
+import nltk
+nltk.download('stopwords')
+
 import pandas as pd
 import numpy as np
 from string import punctuation
