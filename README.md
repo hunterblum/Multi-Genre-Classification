@@ -1,11 +1,22 @@
 # Lyrics Genre Classification
+_For University of San Diego ADS-509 Spring 2023_
+
+Created by Hunter Blum, Kyle Estaban Dalope, & Nicholas Lee
+
 The model takes in a sample of approximately 1,000 well-known songs per genre, analyzes the lyrics, and predicts the probability of each genre for a given set of lyrics.
 
-## How to Use the Application
+## How to Use the Application:
 1. Navigate to the following page: https://team12lyricprediction-bbfd6d8898af.herokuapp.com/#
 2. The first page provides a general overview of the creation process behind the app. To being making predictions, click on _Try the App Now_ (in the black box) or click on the _App_ tab above, or click on this link (https://team12lyricprediction-bbfd6d8898af.herokuapp.com/prediction.html).
 3. Input any set of lyrics or text in the text box on the page.
-4. Click submit.
+4. Click submit. Preview the output, like the one below.
+5. The output is the probability of each genre; and for the most likely genre, the words are highlighted such that green lyrics indicate words that supported the prediction of the most likely genre and words highlighted in red suggest otherwise.
+
+_Example Output_
+
+<p align="center">
+  <img src="https://github.com/hunterblum/TextMining_Team12/blob/main/App_Sample_Results.png" />
+</p>
 
 
 ## Repository Contents:
