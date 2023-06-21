@@ -44,9 +44,9 @@ _Lyric Data_
 
 _Flask Application Files_:
 
-- _Templates Folder_(https://github.com/hunterblum/TextMining_Team12/tree/main/templates)
+- [_Templates Folder_](https://github.com/hunterblum/TextMining_Team12/tree/main/templates)
     - This folder contains the files needed to create the foundation for the model, such as all HTML source code, the model and text vectorizer pickle objects, and the python script utilized for predictions.
-- _Static Folder_(https://github.com/hunterblum/TextMining_Team12/tree/main/static)
+- [_Static Folder_](https://github.com/hunterblum/TextMining_Team12/tree/main/static)
     -  This folder contains the CSS files needed by Flask for aesthetics and application design.
--  _App.py_(https://github.com/hunterblum/TextMining_Team12/blob/main/app.py)
+-  [_App.py_](https://github.com/hunterblum/TextMining_Team12/blob/main/app.py)
     -   App.py is the file read by Flask that drives the application.
