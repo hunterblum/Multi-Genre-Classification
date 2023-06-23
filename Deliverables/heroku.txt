@@ -17,3 +17,6 @@ touch Procfile (this file tells Heroku what to do with the application)
 heroku create team12lyricprediction
 git remove -v 
 git push heroku main
+
+
+Video tutorial: https://www.youtube.com/watch?v=Z1RJmh_OqeA start at 41:30
