@@ -50,3 +50,11 @@ _Flask Application Files_:
     -  This folder contains the CSS files needed by Flask for aesthetics and application design.
 -  [_App.py_](https://github.com/hunterblum/TextMining_Team12/blob/main/app.py)
     -   App.py is the file read by Flask that drives the application.
+
+## Acknowledgements:
+_References_:
+
+* [Flask Introduction]([https://react-icons.github.io/react-icons/search](https://github.com/jakerieger/FlaskIntroduction/tree/master/.github)https://github.com/jakerieger/FlaskIntroduction/tree/master/.github)
+* [Blueprints for Text Analysis Using Python](https://github.com/blueprints-for-text-analytics-python/blueprints-text)
+* [Web Scraping with Beautiful Soup](https://github.com/learn-co-curriculum/python-scraping-beautiful_soup)
+* [Genius Lyrics](https://genius.com/)
