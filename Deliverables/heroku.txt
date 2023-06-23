@@ -1,4 +1,4 @@
-This file includes the steps to deploy the application (Lyric Genre Classification) with Heroku
+This file summarizes the steps to deploy the application (Lyric Genre Classification) with Heroku
 
 Create a Heroku account (free tier) 
 
