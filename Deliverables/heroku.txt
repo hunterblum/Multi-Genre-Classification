@@ -1,0 +1,19 @@
+This file includes the steps to deploy the application (Lyric Genre Classification) with Heroku
+
+Create a Heroku account (free tier) 
+
+Use Heroku CLI and download and install
+
+Terminal in VS Code
+heroku login
+*verify you are in the Git repository for project
+
+pip3 install gunicorn
+pip3 freeze > requirements.txt
+
+touch Procfile (this file tells Heroku what to do with the application)
+*web: gunicorn app:app
+
+heroku create team12lyricprediction
+git remove -v 
+git push heroku main
