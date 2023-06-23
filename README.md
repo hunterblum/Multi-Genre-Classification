@@ -58,3 +58,4 @@ _References_:
 * [Blueprints for Text Analysis Using Python](https://github.com/blueprints-for-text-analytics-python/blueprints-text)
 * [Web Scraping with Beautiful Soup](https://github.com/learn-co-curriculum/python-scraping-beautiful_soup)
 * [Genius Lyrics](https://genius.com/)
+* [Using Flask and Deploy Application with Heroku](https://www.youtube.com/watch?v=Z1RJmh_OqeA)
