@@ -1,5 +1,5 @@
 # Lyrics Genre Classification
-_For University of San Diego ADS-509 Spring 2023_
+_For University of San Diego ADS-509 Summer 2023_
 
 Created by Hunter Blum, Kyle Esteban Dalope, & Nicholas Lee
 
