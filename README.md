@@ -6,8 +6,8 @@ Created by Hunter Blum, Kyle Esteban Dalope, & Nicholas Lee
 The model takes in a sample of approximately 1,000 well-known songs per genre, analyzes the lyrics, and predicts the probability of each genre for a given set of lyrics.
 
 ## How to Use the Application:
-1. Navigate to the following page: https://team12lyricprediction-bbfd6d8898af.herokuapp.com/#
-2. The first page provides a general overview of the creation process behind the app. To being making predictions, click on _Try the App Now_ (in the black box) or click on the _App_ tab above, or click on this link (https://team12lyricprediction-bbfd6d8898af.herokuapp.com/prediction.html).
+1. Navigate to the following page: http://hunterblum.pythonanywhere.com/#
+2. The first page provides a general overview of the creation process behind the app. To being making predictions, click on _Try the App Now_ (in the black box) or click on the _App_ tab above, or click on this link (http://hunterblum.pythonanywhere.com/prediction.html).
 3. Input any set of lyrics or text in the text box on the page.
 4. Click submit. Preview the output, like the one below.
 5. The output is the probability of each genre; and for the most likely genre, the words are highlighted such that green lyrics indicate words that supported the prediction of the most likely genre and words highlighted in red suggest otherwise.
@@ -58,4 +58,3 @@ _References_:
 * [Blueprints for Text Analysis Using Python](https://github.com/blueprints-for-text-analytics-python/blueprints-text)
 * [Web Scraping with Beautiful Soup](https://github.com/learn-co-curriculum/python-scraping-beautiful_soup)
 * [Genius Lyrics](https://genius.com/)
-* [Using Flask and Deploy Application with Heroku](https://www.youtube.com/watch?v=Z1RJmh_OqeA)
